@@ -3,14 +3,20 @@ import Badge from "./Badge";
 import Button from "./Button";
 import styles from './Card.module.css';
 
-const Card = ({body, btn, title, badge, image, indicator, subtitle, btn2}: CardInterface) => {
-    const themes = ["light", "dark"];
-    const themeToggles = document.querySelectorAll('[name="themeSwitcher"]');
-    function changeTheme(e){
-        document.documentElement.setAttribute("data-theme", e.target.id);
-    }
-    themeToggles.forEach((t)=>t.addEventListener("change", changeTheme));    
 
+const Card = ({body, btn, title, badge, image, indicator, subtitle, btn2}: CardInterface) => {  
+    type Themes = "light" | "dark";
+    const themeToggles = document.querySelectorAll('[name="themeSwitcher"]');
+    function changeTheme(theme: Themes){
+        document.documentElement.setAttribute("data-theme", theme);
+    }
+    function handleThemeClick(e: Event){
+        const theme = (e.target as HTMLElement).id as Themes;
+        changeTheme(theme);
+    }
+    themeToggles.forEach((t)=>t.addEventListener("change", handleThemeClick));    
+  
+    const themes = ["light", "dark"];
     return (
         <article className={`stack-lg ${styles.card}`}>
             {indicator &&

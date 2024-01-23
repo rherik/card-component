@@ -5,7 +5,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 :root {
     /* fonts */
     --fs-200: 14px;
@@ -41,15 +40,13 @@
     --round-lg: 15px;
     --round-full: 100vmax;    
 
-        /* colors definition */
-        --bkg: var(--lm-bkg);
-        --muted: var(--lm-muted);
-        --text: var(--lm-text);
-        --accent: var(--lm-accent);
-        --accent2: var(--lm-accent2);
-        color-scheme: light;
-    
-    
+    /* colors definition */
+    --bkg: var(--lm-bkg);
+    --muted: var(--lm-muted);
+    --text: var(--lm-text);
+    --accent: var(--lm-accent);
+    --accent2: var(--lm-accent2);
+    color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
     :root {
@@ -61,7 +58,6 @@
         color-scheme: dark;
     }
 }
-
 [data-theme="dark"] {
     --bkg: var(--dm-bkg);
     --muted: var(--dm-muted);
