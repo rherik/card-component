@@ -27,16 +27,16 @@
 }
 .button:is(:hover, :focus-visible) {
     box-shadow:
-    0 0 0 3px hsl(var(--bkg)),
+    0 0 0 3px var(--bkg),
     0 0 0 6px var(--type);
 }
 .primary {
-    --type: hsl(var(--accent))
+    --type: var(--accent);
 }
 .secundary {
-    --type: hsl(var(--accent2))
+    --type: var(--accent2);
 }
 .filled {
     --fill: var(--type);
-    color: hsl(var(--bkg));
+    color: var(--bkg);
 }

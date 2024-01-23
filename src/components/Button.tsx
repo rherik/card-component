@@ -12,7 +12,7 @@ const Button = ({text, type, referencia, filled, icon}: ButtonInterface) => {
         ${styles[type]}
         ${filledClass}`}
         >
-            <span>{text}</span>
+            <span><strong>{text}</strong></span>
             {icon}
         </a>
     )

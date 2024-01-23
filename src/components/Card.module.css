@@ -11,9 +11,9 @@
 }
 .body {
     max-width: var(--content);
-    color: hsl(var(--muted));
+    color: var(--muted);
 }
-img {
+.img {
     width: 50%;
     max-width: 100%;
     aspect-ratio: 16/12;
@@ -35,4 +35,13 @@ img {
 .button {
     display: flex;
     justify-content: space-between;
+}
+.theme_switcher{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    & label {
+        display: grid;
+    }
 }

@@ -4,7 +4,6 @@ import Card from './components/Card';
 import yo from './images/yo.png';
 
 function App() {
-
   return (
     <>
       <div className='App'>

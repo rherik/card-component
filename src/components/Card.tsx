@@ -4,6 +4,13 @@ import Button from "./Button";
 import styles from './Card.module.css';
 
 const Card = ({body, btn, title, badge, image, indicator, subtitle, btn2}: CardInterface) => {
+    const themes = ["light", "dark"];
+    const themeToggles = document.querySelectorAll('[name="themeSwitcher"]');
+    function changeTheme(e){
+        document.documentElement.setAttribute("data-theme", e.target.id);
+    }
+    themeToggles.forEach((t)=>t.addEventListener("change", changeTheme));    
+
     return (
         <article className={`stack-lg ${styles.card}`}>
             {indicator &&
@@ -15,7 +22,7 @@ const Card = ({body, btn, title, badge, image, indicator, subtitle, btn2}: CardI
                 }
             </div>
             {image &&
-                <img src={image} alt="Adoção svg" className="styles.image"/>
+                <img src={image} alt="Adoção svg" className={styles.img}/>
             }
             <p className={styles.body}>{body}</p>
             {badge && <Badge text={badge.text} filled={badge.filled}/>}
@@ -27,6 +34,17 @@ const Card = ({body, btn, title, badge, image, indicator, subtitle, btn2}: CardI
                 {btn2 && <Button text={btn2.text}
                     type={btn2.type} filled={btn2.filled}
                     referencia={btn2.referencia} icon={btn2.icon}/>
+                }
+            </div>
+            <div className={styles.theme_switcher}>
+                {
+                    themes.map(t => (
+                        <label>
+                            {t}
+                            <input type="radio"
+                            name="themeSwitcher" id={t} />
+                        </label>
+                    ))
                 }
             </div>
         </article>
