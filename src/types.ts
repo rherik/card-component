@@ -18,5 +18,5 @@ export interface CardInterface {
     subtitle?: string,
     body: string,
     btn: ButtonInterface
-    btn2: ButtonInterface
+    btn2?: ButtonInterface
 }
