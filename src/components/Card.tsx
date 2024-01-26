@@ -5,7 +5,7 @@ import Badge from "./Badge";
 import Button from "./Button";
 import styles from './Card.module.css';
 
-const Card = ({ body, btn, title, badge, image, indicator, subtitle, btn2 }: CardInterface) => {
+const Card = ({ body, btn, title, badge, image, subtitle, btn2 }: CardInterface) => {
   const setDarkMode = () => {
     document.documentElement.setAttribute("data-theme", 'dark');
   };
@@ -19,14 +19,13 @@ const Card = ({ body, btn, title, badge, image, indicator, subtitle, btn2 }: Car
 
   return (
     <article className={`stack-lg ${styles.card}`}>
-      {indicator && <small className={styles.indicator}>{indicator}</small>}
+      {badge && <Badge text={badge.text} filled={badge.filled} referencia={badge.referencia} />}
       <div className="stack-sm">
         <h3 className={styles.title}>{title}</h3>
         {subtitle && <small className={styles.subtitle}>{subtitle}</small>}
       </div>
       {image && <img src={image} alt="Adoção svg" className={styles.img} />}
       <p className={styles.body}>{body}</p>
-      {badge && <Badge text={badge.text} filled={badge.filled} />}
       <div className="stack-sm">
         {btn && <Button text={btn.text} type={btn.type} filled={btn.filled} referencia={btn.referencia} icon={btn.icon} />}
         {btn2 && <Button text={btn2.text} type={btn2.type} filled={btn2.filled} referencia={btn2.referencia} icon={btn2.icon} />}
@@ -45,7 +44,6 @@ const Card = ({ body, btn, title, badge, image, indicator, subtitle, btn2 }: Car
               </span>
             </label>
         </div>
-
     </article>
   );
 };

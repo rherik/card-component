@@ -10,7 +10,7 @@ function App() {
       <div className='App'>
         <section className="card-container">
             <Card 
-            body='My links'
+            body='My work:'
             title='Herik Cunha'
             image={yo}
             btn2={{
@@ -20,13 +20,16 @@ function App() {
               referencia: "siteflask-110i.onrender.com/",
               icon: <FaDog/>
             }}
-            indicator="Open to work"
             btn={{
               text: "My github",
               type: "primary",
               filled: false,
               referencia: "github.com/rherik",
               icon: <FaGithubAlt/>
+            }}
+            badge={{
+              text: "My linkedIn",
+              referencia: "linkedin.com/in/herik-cunha/"
             }}
             />
         </section>

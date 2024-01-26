@@ -83,7 +83,7 @@ body {
     place-items: center;
     min-height: 100vh;
     padding: var(--space-lg);
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-family: Inter, Avenir, Bembo, Helvetica, Arial, sans-serif;
     font-size: var(--fs-400);
     line-height: var(--lh-1-4);
     font-weight: 400;
@@ -101,6 +101,7 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: 'Bembo';
     font-weight: 600;
     line-height: var(--lh-1-1);
     font-size: var(--fs-500);

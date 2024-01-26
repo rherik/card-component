@@ -13,6 +13,9 @@
     max-width: var(--content);
     color: var(--muted);
 }
+p {
+    font-family: Bembo;
+}
 .img {
     width: 50%;
     max-width: 100%;
@@ -24,13 +27,17 @@
     position: absolute;
     right: 0;
     background-color: rgb(102, 195, 102);
-    color: white;
     border-radius: var(--round-full);
     aspect-ratio: 2/2;
     display: grid;
     place-items: center;
     padding: var(--space-sm);
     transform: translate(50%, -50%);
+    cursor: pointer;
+}
+a{
+    color: white;
+    text-decoration: none;
 }
 .button {
     display: flex;

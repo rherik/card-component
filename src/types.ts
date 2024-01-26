@@ -1,6 +1,7 @@
 export interface BadgeInterface {
     text: string;
     filled?: boolean;
+    referencia?: string;
 }
 export interface ButtonInterface {
     text: string;
@@ -11,12 +12,12 @@ export interface ButtonInterface {
     img_icon?: string;
 }
 export interface CardInterface {
-    indicator?: string,
-    badge?: BadgeInterface,
-    image?: string,
-    title: string,
-    subtitle?: string,
-    body: string,
-    btn: ButtonInterface
-    btn2?: ButtonInterface
+    indicator?: string;
+    badge?: BadgeInterface;
+    image?: string;
+    title: string;
+    subtitle?: string;
+    body: string;
+    btn: ButtonInterface;
+    btn2?: ButtonInterface;
 }
