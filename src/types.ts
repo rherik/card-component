@@ -2,6 +2,7 @@ export interface BadgeInterface {
     text: string;
     filled?: boolean;
     referencia?: string;
+    pdf?: string;
 }
 export interface ButtonInterface {
     text: string;
@@ -20,4 +21,5 @@ export interface CardInterface {
     body: string;
     btn: ButtonInterface;
     btn2?: ButtonInterface;
+    btn3?: ButtonInterface;
 }

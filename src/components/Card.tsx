@@ -5,7 +5,7 @@ import Badge from "./Badge";
 import Button from "./Button";
 import styles from './Card.module.css';
 
-const Card = ({ body, btn, title, badge, image, subtitle, btn2 }: CardInterface) => {
+const Card = ({ body, btn, btn2, btn3, title, badge, image, subtitle }: CardInterface) => {
   const setDarkMode = () => {
     document.documentElement.setAttribute("data-theme", 'dark');
   };
@@ -29,6 +29,7 @@ const Card = ({ body, btn, title, badge, image, subtitle, btn2 }: CardInterface)
       <div className="stack-sm">
         {btn && <Button text={btn.text} type={btn.type} filled={btn.filled} referencia={btn.referencia} icon={btn.icon} />}
         {btn2 && <Button text={btn2.text} type={btn2.type} filled={btn2.filled} referencia={btn2.referencia} icon={btn2.icon} />}
+        {btn3 && <Button text={btn3.text} type={btn3.type} filled={btn3.filled} referencia={btn3.referencia} icon={btn3.icon} />}
       </div>
       <div className={styles.dark_mode}>
             <label className={styles.dark_mode_label}>

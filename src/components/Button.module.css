@@ -36,6 +36,9 @@
 .secundary {
     --type: var(--accent2);
 }
+.third {
+    --type: var(--accent3);
+}
 .filled {
     --fill: var(--type);
     color: var(--bkg);

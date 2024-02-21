@@ -21,6 +21,8 @@
     --lm-text: hsl(246 76% 4.9%);
     --lm-accent: hsl(245 75% 54.5%);
     --lm-accent2: hsla(40, 94%, 47%, 0.827);
+    --lm-accent3: hsla(280, 51%, 16%, 0.827);
+
 
     /* colors dark */
     --dm-bkg: hsl(252, 6%, 16%);
@@ -29,6 +31,8 @@
     --gray-light: 229, 233, 240;
     --dm-accent: hsl(277, 43%, 39%);
     --dm-accent2: hsla(40, 49%, 34%, 0.874);
+    --dm-accent3: hsla(269, 80%, 67%, 0.874);
+
 
     /* utils */
     --space-sm: clamp(0.4rem, 1.5vw, .8rem);
@@ -46,6 +50,7 @@
     --text: var(--lm-text);
     --accent: var(--lm-accent);
     --accent2: var(--lm-accent2);
+    --accent3: var(--lm-accent3);
     color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
@@ -55,6 +60,7 @@
         --text: var(--dm-text);
         --accent: var(--dm-accent);
         --accent2: var(--dm-accent2);
+        --accent3: var(--dm-accent3);
         color-scheme: dark;
     }
 }
@@ -64,6 +70,7 @@
     --text: var(--dm-text);
     --accent: var(--dm-accent);
     --accent2: var(--dm-accent2);
+    --accent3: var(--dm-accent3);
     color-scheme: dark;
 }
 [data-theme="light"] {
@@ -72,6 +79,7 @@
     --text: var(--lm-text);
     --accent: var(--lm-accent);
     --accent2: var(--lm-accent2);
+    --accent3: var(--lm-accent3);
     color-scheme: light;
 
 }
