@@ -1,3 +1,4 @@
+import React from "react";
 import { FaRegSun as Sun } from "react-icons/fa";
 import { IoIosMoon as Moon } from "react-icons/io";
 import { CardInterface } from "../types";
@@ -7,14 +8,30 @@ import styles from './Card.module.css';
 
 const Card = ({ body, btn, btn2, btn3, title, badge, image, subtitle }: CardInterface) => {
   const setDarkMode = () => {
-    document.documentElement.setAttribute("data-theme", 'dark');
+    document.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("selectedTheme", "dark");
   };
+
+//
   const setLightMode = () => {
-    document.documentElement.setAttribute("data-theme", 'light'); 
+    document.documentElement.setAttribute("data-theme", "light"); 
+    localStorage.setItem("selectedTheme", "light");
   };
+
+//Armazena a preferência do usuário para exibir quando recarregar
+  const selectedTheme = localStorage.getItem("selectedTheme");
+  if (selectedTheme === "dark"){
+    setDarkMode();
+  }
+
+  //mudar checked aqui
   const toggleTheme = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.checked) setDarkMode();
-    else setLightMode();
+    if (e.target.checked){
+      setDarkMode();
+    }
+    else{
+      setLightMode();
+    }
   }
 
   return (
@@ -38,6 +55,7 @@ const Card = ({ body, btn, btn2, btn3, title, badge, image, subtitle }: CardInte
                 type='checkbox'
                 id='darkmode-toggle'
                 onChange={toggleTheme}
+                defaultChecked={selectedTheme === "dark"}
             />
               <span className={styles.slider}>
               <Sun className={styles.sun}/>
