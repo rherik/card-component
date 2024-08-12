@@ -1,68 +1,31 @@
-import React from "react";
-import { FaRegSun as Sun } from "react-icons/fa";
-import { IoIosMoon as Moon } from "react-icons/io";
 import { CardInterface } from "../types";
 import Badge from "./Badge";
 import Button from "./Button";
-import styles from './Card.module.css';
+import Toogle from './Toogle';
 
-const Card = ({ body, btn, btn2, btn3, title, badge, image, subtitle }: CardInterface) => {
-  const setDarkMode = () => {
-    document.documentElement.setAttribute("data-theme", "dark");
-    localStorage.setItem("selectedTheme", "dark");
-  };
-
-//
-  const setLightMode = () => {
-    document.documentElement.setAttribute("data-theme", "light"); 
-    localStorage.setItem("selectedTheme", "light");
-  };
-
-//Armazena a preferência do usuário para exibir quando recarregar
-  const selectedTheme = localStorage.getItem("selectedTheme");
-  if (selectedTheme === "dark"){
-    setDarkMode();
-  }
-
-  //mudar checked aqui
-  const toggleTheme = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.checked){
-      setDarkMode();
-    }
-    else{
-      setLightMode();
-    }
-  }
-
+const Card = ({ body, btn, btn2, btn3, btn4, btn5, title, badge, image }: CardInterface) => {
   return (
-    <article className={`stack-lg ${styles.card}`}>
-      {badge && <Badge text={badge.text} filled={badge.filled} referencia={badge.referencia} />}
-      <div className="stack-sm">
-        <h3 className={styles.title}>{title}</h3>
-        {subtitle && <small className={styles.subtitle}>{subtitle}</small>}
+    <article className='flex flex-col h-[550px] border-r border-b border-l border-gray-400 
+    lg:border-gray-400 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 p-4 
+    rounded-3xl shadow-xl pt-8'>
+      <div className="ml-[520px] -mt-12 w-24 absolute">
+        {badge && <Badge text={badge.text} filled={badge.filled} referencia={badge.referencia} />}
       </div>
-      {image && <img src={image} alt="Adoção svg" className={styles.img} />}
-      <p className={styles.body}>{body}</p>
-      <div className="stack-sm">
-        {btn && <Button text={btn.text} type={btn.type} filled={btn.filled} referencia={btn.referencia} icon={btn.icon} />}
-        {btn2 && <Button text={btn2.text} type={btn2.type} filled={btn2.filled} referencia={btn2.referencia} icon={btn2.icon} />}
-        {btn3 && <Button text={btn3.text} type={btn3.type} filled={btn3.filled} referencia={btn3.referencia} icon={btn3.icon} />}
+      <div className="flex justify-start mb-8">
+        <h3 className='text-gray-900 font-bold text-xl mb-2'>{title}</h3>
       </div>
-      <div className={styles.dark_mode}>
-            <label className={styles.dark_mode_label}>
-            <input
-                className={styles.dark_mode_input}
-                type='checkbox'
-                id='darkmode-toggle'
-                onChange={toggleTheme}
-                defaultChecked={selectedTheme === "dark"}
-            />
-              <span className={styles.slider}>
-              <Sun className={styles.sun}/>
-              <Moon className={styles.moon}/>
-              </span>
-            </label>
+      {image && <img src={image} alt="Herik svg" className='h-56 w-80 rounded-lg' />}
+      <div className="pt-2">
+        <p className='text-sm text-blue-400 font-semibold font-mono flex items-center'>{body}</p>
+        <div className="grid grid-cols-3 pt-2">
+          {btn && <Button text={btn.text} referencia={btn.referencia} icon={btn.icon} />}
+          {btn2 && <Button text={btn2.text} referencia={btn2.referencia} icon={btn2.icon} />}
+          {btn3 && <Button text={btn3.text} referencia={btn3.referencia} icon={btn3.icon} />}
+          {btn4 && <Button text={btn4.text} referencia={btn4.referencia} icon={btn4.icon} />}
+          {btn5 && <Button text={btn5.text} referencia={btn5.referencia} icon={btn5.icon} />}
+          <Toogle />
         </div>
+      </div>
     </article>
   );
 };

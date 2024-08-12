@@ -6,9 +6,7 @@ export interface BadgeInterface {
 }
 export interface ButtonInterface {
     text: string;
-    type: string;
     referencia: string;
-    filled?: boolean;
     icon?: JSX.Element;
     img_icon?: string;
 }
@@ -22,4 +20,6 @@ export interface CardInterface {
     btn: ButtonInterface;
     btn2?: ButtonInterface;
     btn3?: ButtonInterface;
+    btn4?: ButtonInterface;
+    btn5?: ButtonInterface;
 }
