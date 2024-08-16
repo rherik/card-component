@@ -11,7 +11,7 @@ const Button = ({text, referencia, icon}: ButtonInterface) => {
         group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white 
          dark:focus:ring-pink-800">
     
-            <span className='w-full px-5 py-2.5 transition-all ease-in duration-75 bg-white 
+            <span className='w-full h-full px-5 py-2.5 transition-all ease-in duration-75 bg-white 
             dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'>
                 <strong>{text}</strong>
                 {icon}

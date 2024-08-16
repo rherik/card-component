@@ -1,14 +1,20 @@
-import {useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { FaRegSun as Sun } from "react-icons/fa";
 import { IoIosMoon as Moon } from "react-icons/io";
 
 const Toogle = () => {
+
     const [theme, setTheme] = useState("light");
+    const [isToggled, setIsToggled] = useState(false);
+
     useEffect(() => {
         if (theme === "dark"){
             document.documentElement.classList.add("dark");
+            setIsToggled(false);
         } else {
-            document.documentElement.classList.remove("dark"); 
+            document.documentElement.classList.remove("dark");
+            setIsToggled(true);
         }
     }, [theme]);
     const handleThemeSwitch = () =>{
@@ -16,23 +22,25 @@ const Toogle = () => {
     };
 
     return(
-        <div className='inline-flex items-center cursor-pointer'>
-        <label className='relative w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 
-        peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 
-        peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white 
-        after:content-[] after:absolute after:top-0.5 after:start-[4px] after:bg-white after:border-gray-300 
-        after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600'>
-        <input
-            className='sr-only peer'
-            type='checkbox'
-            id='darkmode-toggle'
-            onChange={handleThemeSwitch}
-        />
-          <span className='flex justify-around mt-1.5 text-sm font-medium text-gray-900 dark:text-gray-300'>
-            <Sun className=''/>
-            <Moon className=''/>
-          </span>
-        </label>
+        <div className='relative flex w-fit items-center rounded-full'>
+            <div className="relative flex w-fit items-center rounded-full">
+                <button className="flex items-center gap-2 px-3 md:pl-3 md:pr-3.5 py-3 md:py-1.5 transition-colors relative z-10"
+                onClick={handleThemeSwitch}>           
+                <Sun className={`relative z-10 text-white`}/>
+                </button>
+
+                <button className="flex items-center gap-2 px-3 md:pl-3 md:pr-3.5 py-3 md:py-1.5 transition-colors relative z-10"
+                onClick={handleThemeSwitch}>
+                <Moon className={`relative z-10 text-[#4a8dc9]`}/>
+                </button>
+                
+                <div className={`absolute inset-0 z-0 flex ${isToggled === false ? "justify-end" : "justify-start"}`}>
+                <motion.span
+                layout
+                transition={{ type: "spring", damping: 15, stiffness: 250 }}
+                className="h-full w-1/2 rounded-full bg-gradient-to-r from-yellow-500 to-[#4a8dc9]"/>
+                </div>
+            </div>
         </div>
         )
 }

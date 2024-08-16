@@ -1,5 +1,6 @@
-import { FaDog, FaGithubAlt, FaHeartbeat } from "react-icons/fa";
 import { AiOutlineLinkedin } from "react-icons/ai";
+import { FaDog, FaGithubAlt, FaHeartbeat } from "react-icons/fa";
+import { FaCode } from "react-icons/fa6";
 import Card from './components/Card';
 import yo from './statics/yo.png';
 
@@ -15,7 +16,7 @@ function App() {
             btn5={{
               text: "Favs Rest api",
               referencia: "https://favs-api.onrender.com/albuns",
-              icon: <FaHeartbeat />
+              icon: <FaCode />
             }}
             btn4={{
               text: "My love",
