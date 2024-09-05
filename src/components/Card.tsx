@@ -5,10 +5,10 @@ import Toogle from './Toogle';
 
 const Card = ({ body, btn, btn2, btn3, btn4, btn5, title, badge, image }: CardInterface) => {
   return (
-    <article className='flex flex-col h-[550px] border-r border-b border-l border-gray-400 
+    <article className='flex flex-col border-r border-b border-l border-gray-400 
     lg:border-gray-400 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 p-4 
     rounded-3xl shadow-xl pt-8'>
-      <div className="ml-[520px] -mt-12 w-24 absolute">
+      <div>
         {badge && <Badge text={badge.text} filled={badge.filled} referencia={badge.referencia} />}
       </div>
       <div className="flex justify-start mb-8">
