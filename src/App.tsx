@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div className='h-screen font-sans bg-blue-300 dark:bg-blue-950 flex justify-center items-center'>
-        <section className="sm:w-64 md:w-[64px] lg:w-[520px]">
+        <section className="w-96 md:w-[348px] lg:w-[680px]">
             <Card 
             body='My work:'
             title='Herik Cunha'

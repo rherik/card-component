@@ -17,7 +17,7 @@ const Card = ({ body, btn, btn2, btn3, btn4, btn5, title, badge, image }: CardIn
       {image && <img src={image} alt="Herik svg" className='h-56 w-80 rounded-lg' />}
       <div className="pt-2">
         <p className='text-sm text-blue-400 font-semibold font-mono flex items-center'>{body}</p>
-        <div className="grid grid-cols-3 pt-2">
+        <div className="grid pt-2 lg:grid-cols-3 md:grid-cols-2">
           {btn && <Button text={btn.text} referencia={btn.referencia} icon={btn.icon} />}
           {btn2 && <Button text={btn2.text} referencia={btn2.referencia} icon={btn2.icon} />}
           {btn3 && <Button text={btn3.text} referencia={btn3.referencia} icon={btn3.icon} />}
