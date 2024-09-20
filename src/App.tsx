@@ -1,6 +1,7 @@
 import { AiOutlineLinkedin } from "react-icons/ai";
-import { FaDog, FaGithubAlt, FaHeartbeat } from "react-icons/fa";
+import { FaDog, FaGithubAlt } from "react-icons/fa";
 import { FaCode } from "react-icons/fa6";
+import { GrUserFemale } from "react-icons/gr";
 import Card from './components/Card';
 import yo from './statics/yo.png';
 
@@ -19,9 +20,9 @@ function App() {
               icon: <FaCode />
             }}
             btn4={{
-              text: "My love",
-              referencia: "https://rherik.github.io/web-laurository/",
-              icon: <FaHeartbeat />
+              text: "Estética Dalva Campos",
+              referencia: "https://dalv-web.vercel.app/",
+              icon: <GrUserFemale />
             }}
             btn3={{
               text: "My linkedin",
