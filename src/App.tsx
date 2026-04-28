@@ -1,5 +1,5 @@
 import { AiOutlineLinkedin } from "react-icons/ai";
-import { FaDog, FaGithubAlt } from "react-icons/fa";
+import { FaGithubAlt } from "react-icons/fa";
 import { FaCode } from "react-icons/fa6";
 import { GrUserFemale } from "react-icons/gr";
 import Card from './components/Card';
@@ -29,11 +29,11 @@ function App() {
               referencia: "linkedin.com/in/herik-cunha/",
               icon: <AiOutlineLinkedin />
             }}
-            btn2={{
-              text: 'My adoption website',
-              referencia: "siteflask-110i.onrender.com/",
-              icon: <FaDog/>
-            }}
+            // btn2={{
+            //   text: 'My adoption website',
+            //   referencia: "siteflask-110i.onrender.com/",
+            //   icon: <FaDog/>
+            // }}
             btn={{
               text: "My github",
               referencia: "github.com/rherik",
